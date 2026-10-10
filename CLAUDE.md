@@ -66,8 +66,8 @@ Do not leave commented-out code.
 
 - `openspec/changes/archive/` is gitignored. Archived changes are local history only;
   the merged specs in `openspec/specs/` are what gets committed.
-- `vendor/libp2p-relay` is rust-libp2p's relay crate with the patches listed in its
-  `PATCHES.md`; keep that list complete.
+- `vendor/libp2p-relay` and `vendor/libp2p-gossipsub` are rust-libp2p crates with the patches
+  listed in their `PATCHES.md`; keep those lists complete.
 - Everything is in English: code, comments, READMEs, specs, commit messages.
 - Commits use the repo-local pseudonymous author (RebeLLM). Never commit with a personal
   name or e-mail address.

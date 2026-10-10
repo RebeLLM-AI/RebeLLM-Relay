@@ -19,6 +19,63 @@ name = "rebellm-relay-peer-id"
 path = "src/bin/peer_id.rs"
 
 [dependencies]
+libp2p = { version = "0.57", default-features = false, features = [
+  "tokio",
+  "tcp",
+  "dns",
+  "websocket",
+  "noise",
+  "yamux",
+  "identify",
+  "ping",
+  "relay",
+  "gossipsub",
+  "macros",
+  "ed25519",
+  "rsa",
+  "secp256k1",
+] }
+libp2p-stream = "0.5.0-alpha"
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "net", "time", "signal", "process", "io-util", "sync"] }
+futures = "0.3"
+serde_json = { version = "1", features = ["preserve_order"] }
+sha2 = "0.10"
+md-5 = "0.10"
+base64 = "0.22"
+rand = "0.9"
+url = "2"
+bytes = "1"
+hyper = { version = "1", features = ["server", "http1"] }
+hyper-util = { version = "0.1", features = ["tokio"] }
+http-body-util = "0.1"
+reqwest = { version = "0.12", default-features = false, features = [
+  "rustls-tls-webpki-roots",
+  "gzip",
+  "brotli",
+  "deflate",
+  "stream",
+] }
+if-addrs = "0.13"
+memory-stats = "1"
+
+[target.'cfg(unix)'.dependencies]
+libc = "0.2"
+
+[target.'cfg(windows)'.dependencies]
+windows-sys = { version = "0.59", features = ["Win32_System_Threading", "Win32_Foundation"] }
+
+[dev-dependencies]
+tempfile = "3"
+flate2 = "1"
+
+# rust-libp2p's relay and gossipsub crates with the patches listed in their PATCHES.md.
+[patch.crates-io]
+libp2p-relay = { path = "vendor/libp2p-relay" }
+libp2p-gossipsub = { path = "vendor/libp2p-gossipsub" }
+
+# No debug info: linking the test binaries takes minutes with it.
+[profile.dev]
+debug = false
 
 [profile.release]
 lto = "thin"

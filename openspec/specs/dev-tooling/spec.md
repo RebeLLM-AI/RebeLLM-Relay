@@ -5,8 +5,9 @@ How the repository checks itself: one command, a pre-commit gate, and no machine
 ## Requirements
 ### Requirement: Single check command
 The repository SHALL offer one command, `npm run check`, that runs `cargo fmt --check`,
-`cargo clippy` with warnings as errors, `cargo test`, ESLint, the Prettier format check and
-the Node.js tests, and SHALL exit non-zero when any of them fails.
+`cargo clippy` with warnings as errors, `cargo test`, a build of the relay, the TypeScript
+type check, ESLint, the Prettier format check, the sidecar's tests and the black-box suite
+against the built relay, and SHALL exit non-zero when any of them fails.
 
 #### Scenario: Clean tree
 - **WHEN** `npm run check` runs on a tree whose code is formatted, lint-free and passes its tests
@@ -14,6 +15,10 @@ the Node.js tests, and SHALL exit non-zero when any of them fails.
 
 #### Scenario: Unformatted Rust
 - **WHEN** a Rust source file is not formatted as `cargo fmt` writes it
+- **THEN** `npm run check` exits non-zero
+
+#### Scenario: Relay breaks a browser peer
+- **WHEN** a change to the relay makes a js-libp2p peer of the black-box suite fail
 - **THEN** `npm run check` exits non-zero
 
 ### Requirement: Pre-commit gate on the staged snapshot

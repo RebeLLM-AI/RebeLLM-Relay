@@ -1,0 +1,27 @@
+{
+  "name": "rebellm-relay-compat",
+  "private": true,
+  "license": "SEE LICENSE IN LICENSE",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Black-box tests: js-libp2p peers of the web app's versions against the built relay",
+  "scripts": {
+    "test": "node --test --test-concurrency=1"
+  },
+  "engines": {
+    "node": ">=22.18"
+  },
+  "devDependencies": {
+    "@chainsafe/libp2p-noise": "^17.0.0",
+    "@chainsafe/libp2p-yamux": "^8.0.1",
+    "@libp2p/circuit-relay-v2": "^4.2.13",
+    "@libp2p/crypto": "^5.1.23",
+    "@libp2p/gossipsub": "^17.1.2",
+    "@libp2p/identify": "^4.1.14",
+    "@libp2p/peer-id": "^6.0.15",
+    "@libp2p/ping": "^3.1.13",
+    "@libp2p/websockets": "^10.1.21",
+    "@multiformats/multiaddr": "^13.0.3",
+    "libp2p": "^3.3.11"
+  }
+}
