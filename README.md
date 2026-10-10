@@ -79,6 +79,20 @@ starts it again after 1 s, doubling up to 60 s. The sidecar exits when the relay
 
 The sidecar has no dependencies; Node.js runs its TypeScript sources as they are.
 
+## Container image
+
+```sh
+docker build -t rebellm-relay .
+docker run -v relay-data:/data -p 9090:9090 rebellm-relay
+```
+
+The image builds the relay in a Rust stage and runs it on the Node.js image the sidecar needs,
+as the user `node`, with the key and the statistics in the volume `/data`. It also answers the
+commands of the Node.js relay's image, `node index.ts <options>` and
+`node peer-id.ts <key file>`, so a deployment written for that image runs this one.
+[docs/deploy-parity.md](docs/deploy-parity.md) lists what is the same, what differs, and what
+a deployment of the Node.js relay has to change.
+
 ## Test
 
 ```sh
@@ -114,8 +128,10 @@ gossipsub crates with the patches listed in their `PATCHES.md`
 | `sidecar/` | statistics, memory history, admin API |
 | `compat/` | black-box suite with js-libp2p peers |
 | `vendor/` | patched rust-libp2p relay and gossipsub crates |
+| `Dockerfile`, `docker/` | the image, and the previous image's commands |
 | `openspec/specs/` | what the relay does, requirement by requirement |
 | `docs/test-parity.md` | the Node.js relay's tests and where they are now |
+| `docs/deploy-parity.md` | replacing the Node.js relay in a deployment |
 
 ## Licence
 

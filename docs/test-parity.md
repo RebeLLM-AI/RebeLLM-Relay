@@ -61,7 +61,7 @@ note), **not ported** (with the reason).
 | stats: the network row carries the p99 event-loop lag beyond the sampling interval, in whole ms | sidecar `stats.test.ts`; Rust `process::the_lag_is_the_99th_percentile_…` | same |
 | stats: a peer's strings are quoted in the counts, so they add no column, row or formula | sidecar `stats.test.ts` | same |
 | countBytes adds both directions of a stream | compat `relay.test.ts` "relayed bytes are counted in both directions of a stream" | adapted: the wrapper of a js-libp2p stream is the relay crate's patched copy loop, measured on a real relayed stream |
-| a real relay with a stats file keeps an announcing peer, counts relayed bytes and writes the files | compat `relay.test.ts` same name | adapted: the tick comes from a 9 s interval instead of a direct call; the validator-instance check is covered by the parse-once tests |
+| a real relay with a stats file keeps an announcing peer, counts relayed bytes and writes the files | compat `relay.test.ts` same name | adapted: the tick comes from a 9 s interval instead of a direct call, and the peer announces every second, as the statistics keep a peer for one interval; the validator-instance check is covered by the parse-once tests |
 | reports: accepted when they decode, fit 2 KB and come from their own author | Rust `announce::reports_accepted_…`; compat "a report over 2 KB is rejected for gossip" | ported |
 | reports: one flat row per report without its peer, at the tick, header once, in the order of the report | sidecar `stats.test.ts` | same |
 | reports: a peer's strings are quoted like in peers.csv, and the rows between ticks are bounded | sidecar `stats.test.ts` | same |

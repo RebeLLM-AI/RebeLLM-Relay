@@ -619,6 +619,7 @@ test('a real relay with a stats file keeps an announcing peer, counts relayed by
   const r = await startRelay({ stats: file, env: { REBELLM_TEST_STATS_INTERVAL_MS: '9000' } })
   const client = await peer({ listen: [`${r.ma}/p2p-circuit`], pubsub: true })
   const other = await peer()
+  let announcing: ReturnType<typeof setInterval> | undefined
   try {
     assert.ok(
       r.lines.some((l) =>
@@ -633,6 +634,11 @@ test('a real relay with a stats file keeps an announcing peer, counts relayed by
       if (tries++ % 10 === 0) client.services.pubsub.publish(ANNOUNCE_TOPIC, announce).catch(() => undefined)
       return (await r.live()).peers?.rows.some((row) => row.peer === id)
     }, r.lines)
+    // A node announces again and again; the statistics keep a peer for one interval after its last.
+    announcing = setInterval(
+      () => client.services.pubsub.publish(ANNOUNCE_TOPIC, announce).catch(() => undefined),
+      1000,
+    )
     await waitFor(() => reserved(client), [])
     await other.dial(through(r, client))
     await waitFor(async () => ((await r.live()).peers?.relayedBytes ?? 0) > 0, r.lines)
@@ -676,6 +682,7 @@ test('a real relay with a stats file keeps an announcing peer, counts relayed by
     assert.deepEqual(live.peers!.replicas, { min: 0, median: 0, max: 1, none: 6 })
     assert.equal(live.limits.connections, 1000)
   } finally {
+    clearInterval(announcing)
     await stopAll(client, other, r)
     await rm(dir, { recursive: true, force: true, maxRetries: 5, retryDelay: 50 })
   }

@@ -1,0 +1,16 @@
+# Only what the Dockerfile copies is needed; tests and build output stay out of the image.
+.git
+.claude
+.githooks
+.cargo
+target
+node_modules
+**/node_modules
+**/*.test.ts
+compat
+docs
+openspec
+scripts
+relay-key.bin
+*.csv
+history.json

@@ -16,5 +16,5 @@
     "erasableSyntaxOnly": true,
     "resolveJsonModule": true
   },
-  "include": ["sidecar/*.ts", "compat/**/*.ts"]
+  "include": ["sidecar/*.ts", "compat/**/*.ts", "docker/*.ts"]
 }

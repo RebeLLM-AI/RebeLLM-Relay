@@ -1,0 +1,7 @@
+{
+  "name": "rebellm-relay-image",
+  "private": true,
+  "license": "SEE LICENSE IN LICENSE",
+  "type": "module",
+  "description": "The commands of the previous relay image, which start the Rust binaries"
+}
