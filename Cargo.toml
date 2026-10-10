@@ -1,0 +1,25 @@
+[package]
+name = "rebellm-relay"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.85"
+description = "Bootstrap and circuit relay for RebeLLM browser peers"
+publish = false
+
+[lib]
+name = "rebellm_relay"
+path = "src/lib.rs"
+
+[[bin]]
+name = "rebellm-relay"
+path = "src/main.rs"
+
+[[bin]]
+name = "rebellm-relay-peer-id"
+path = "src/bin/peer_id.rs"
+
+[dependencies]
+
+[profile.release]
+lto = "thin"
+strip = true

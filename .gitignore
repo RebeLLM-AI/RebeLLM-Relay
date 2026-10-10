@@ -1,0 +1,22 @@
+# Rust build output
+target/
+
+# Node.js
+node_modules/
+
+# Machine settings: build directory, toolchain location
+.cargo/config.toml
+.githooks/local.sh
+.claude/settings.local.json
+
+# OpenSpec archived changes are local history; merged specs are committed
+openspec/changes/archive/
+
+# Relay identity and statistics written by a local run
+relay-key.bin
+history.json
+/peers*.csv
+/hot*.csv
+/reports*.csv
+/counts*.csv
+.env

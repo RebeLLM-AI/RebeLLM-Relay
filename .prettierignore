@@ -1,0 +1,9 @@
+# Prose is not reformatted; lockfiles and build output are generated.
+*.md
+openspec/
+target/
+vendor/
+**/node_modules/
+package-lock.json
+Cargo.lock
+.claude/

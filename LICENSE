@@ -1,0 +1,28 @@
+RebeLLM Relay Personal Use Licence
+
+Copyright (c) 2026 RebeLLM. All rights reserved.
+
+1. Personal use. You may download, build and run this software, unmodified and free of
+   charge, for your own personal, non-commercial purposes.
+
+2. No modification. You may not modify, adapt or translate the software, or make works
+   derived from it.
+
+3. No sale. You may not sell, rent, lease or sublicense the software, offer it as a paid
+   product or service, or otherwise use it for commercial gain.
+
+4. No redistribution. You may not distribute the software or copies of it, except by
+   pointing to this repository.
+
+5. No other rights. Every right not expressly granted here is reserved. Any use outside
+   these terms needs prior written permission from the copyright holder.
+
+6. Termination. These permissions end automatically if you breach these terms.
+
+7. No warranty. The software is provided "as is", without warranty of any kind, express or
+   implied, including merchantability, fitness for a particular purpose and
+   non-infringement. To the extent the law allows, the copyright holder is not liable for
+   any claim, damages or other liability arising from the software or its use.
+
+8. Third-party code. The directory vendor holds third-party software under its own licence
+   (MIT), stated in the files of that directory. That licence, not this one, applies to it.
