@@ -135,5 +135,6 @@ gossipsub crates with the patches listed in their `PATCHES.md`
 
 ## Licence
 
-Free for personal, non-commercial use; no right to sell or modify. See [LICENSE](LICENSE).
+[PolyForm Strict 1.0.0](https://polyformproject.org/licenses/strict/1.0.0): free for personal and
+other non-commercial use; no right to modify, redistribute or sell. See [LICENSE](LICENSE).
 `vendor/` holds third-party code under its own licence.

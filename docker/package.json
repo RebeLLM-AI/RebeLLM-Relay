@@ -1,7 +1,7 @@
 {
   "name": "rebellm-relay-image",
   "private": true,
-  "license": "SEE LICENSE IN LICENSE",
+  "license": "PolyForm-Strict-1.0.0",
   "type": "module",
   "description": "The commands of the previous relay image, which start the Rust binaries"
 }

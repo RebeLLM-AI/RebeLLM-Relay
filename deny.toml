@@ -17,7 +17,7 @@ allow = [
 confidence-threshold = 0.8
 
 [licenses.private]
-# This package itself is proprietary and not published.
+# This package itself is under PolyForm Strict 1.0.0 and not published.
 ignore = true
 
 [sources]

@@ -1,7 +1,7 @@
 {
   "name": "rebellm-relay-repo",
   "private": true,
-  "license": "SEE LICENSE IN LICENSE",
+  "license": "PolyForm-Strict-1.0.0",
   "type": "module",
   "workspaces": [
     "sidecar",

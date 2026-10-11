@@ -4,6 +4,7 @@ version = "0.1.0"
 edition = "2021"
 rust-version = "1.85"
 description = "Bootstrap and circuit relay for RebeLLM browser peers"
+license = "PolyForm-Strict-1.0.0"
 publish = false
 
 [lib]

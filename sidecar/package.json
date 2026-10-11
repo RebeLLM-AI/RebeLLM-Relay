@@ -1,7 +1,7 @@
 {
   "name": "rebellm-relay-sidecar",
   "private": true,
-  "license": "SEE LICENSE IN LICENSE",
+  "license": "PolyForm-Strict-1.0.0",
   "version": "0.1.0",
   "type": "module",
   "description": "Statistics, VRAM history and admin API of the RebeLLM relay",
